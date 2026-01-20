@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+FRONTEND/node_modules/
+BACKEND/node_modules/
+
+# environment files
+.env
+BACKEND/.env
+
+# misc
+.DS_Store
