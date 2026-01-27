@@ -1,0 +1,105 @@
+.ChatWindow {
+    background-color: #212121;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar span {
+    margin: 1rem 2rem;
+}
+
+.UserIconDiv {
+    margin: 1rem 2rem;
+
+}
+
+/* CHAT INPUT */
+.chatInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icon {
+    background-color: #339cff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.InputBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #262626;
+    border-radius: 3rem;
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 700px;
+    cursor: text;
+    position: relative;
+    padding: 20px;
+}
+
+.InputBox input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+.info {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    color: #c9c7c7;
+}
+
+#submit {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: #9ca3af;
+}
+
+#submit:hover {
+    color: white;
+    background: #333;
+    border-radius: 50%;
+}
+
+.loaderWrapper {
+    position: sticky;
+    bottom: 6.5rem;
+    z-index: 40;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
