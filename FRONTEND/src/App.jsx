@@ -1,28 +1,24 @@
-import React, { useState } from 'react'
-import Sidebar from './Sidebar'
-import ChatWindow from './ChatWindow'
-import { MyContext } from './MyContext' // Context to share state across components
-import './App.css'
-import { v1 as uuidv1 } from "uuid" // UUID generator for unique thread IDs
-
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import SignupLogin from "../src/pages/SignupLogin";
+import Sidebar from "./Sidebar";
+import ChatWindow from "./ChatWindow";
+import { MyContext } from "./MyContext";
+import "./App.css";
+import { v1 as uuidv1 } from "uuid";
+import { useAuth } from "./pages/UseAuth";
+import ProtectedRoute from "./hooks/ProtectedRoutes";
 
 function App() {
+  const { user } = useAuth();
 
-  // Stores current user input message
   const [prompt, setPrompt] = useState("");
-
-  // Stores assistant reply from backend
   const [reply, setReply] = useState(null);
-
-  // Stores unique ID for current chat thread
-  const [currId, setCurrId] = useState(uuidv1);
-
-  const [prevChat, setPrevChat] = useState([]); //stores all chats of curr threads
-
-  const [newChat, setNewChat] = useState(true); // Tracks whether the session starts with a new chat
-
+  const [currId, setCurrId] = useState(uuidv1());
+  const [prevChat, setPrevChat] = useState([]);
+  const [newChat, setNewChat] = useState(true);
   const [allThread, setAllthread] = useState([]);
-  // Object holding shared state values
+
   const providerValues = {
     prompt, setPrompt,
     reply, setReply,
@@ -33,14 +29,25 @@ function App() {
   };
 
   return (
-
-    <MyContext.Provider value={providerValues}> {/* Provide shared state to all children */}
+    <MyContext.Provider value={providerValues}>
+      <Routes>
+        <Route
+  path="/"
+  element={
+    <ProtectedRoute>
       <div className="app">
         <Sidebar />
-        <ChatWindow />{/* Chat interface */}
+        <ChatWindow />
       </div>
+    </ProtectedRoute>
+  }
+/>
+
+<Route path="/login" element={<SignupLogin />} />
+
+      </Routes>
     </MyContext.Provider>
-  )
+  );
 }
 
-export default App
+export default App;

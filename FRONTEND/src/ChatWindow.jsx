@@ -1,6 +1,8 @@
 import "./ChatWindow.css"
 // Component responsible for rendering chat messages
 import Chat from './Chat'
+import DropDown from '../src/components/DropDown.jsx'
+
 import { MyContext } from './MyContext'
 import { useContext, useState, useEffect } from 'react'
 import { BounceLoader } from "react-spinners"
@@ -11,6 +13,7 @@ const ChatWindow = () => {
 
   const [loading, setLoading] = useState(false);   // Controls loading spinner while waiting for API response
 
+  const[dropDown, setDropDown]= useState(false);
 
 
   const getReply = async () => {
@@ -65,9 +68,11 @@ const ChatWindow = () => {
         <span>ByteGPT<i className="fa-solid fa-chevron-down"></i></span>
 
         {/* USER ICON WITH DROPDOWN FUNCTION */}
+        <DropDown></DropDown>
         <div className="UserIconDiv">
           <span className='user-icon'> <i className="fa-solid fa-user"></i></span>
         </div>
+        
       </div>
 
       {/* Component displaying chat messages */}
