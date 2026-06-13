@@ -13,7 +13,7 @@ const Sidebar = () => {
   // Fetch all chat threads 
   const getAlltThreads = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/thread");
+      const response = await fetch("https://bytegpt-production-5383.up.railway.app/api/thread");
       const res = await response.json();
 
       // Extract only required fields for sidebar display
@@ -46,7 +46,7 @@ const Sidebar = () => {
   const changeId = async (newThreadId) => {
     setCurrId(newThreadId);
     try {
-      const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`);
+      const response = await fetch(`https://bytegpt-production-5383.up.railway.app/api/thread/${newThreadId}`);
       const res = await response.json();
       console.log(res);
       setPrevChat(res);
@@ -63,7 +63,7 @@ const Sidebar = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/thread/${threadId}`,
+        `https://bytegpt-production-5383.up.railway.app/api/thread/${threadId}`,
         { method: "DELETE" }
       );
 
