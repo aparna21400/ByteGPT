@@ -9,10 +9,23 @@ const app = express();
 const PORT = 8080;
 
 app.use(express.json());
-app.use(cors({
-  origin: ' http://localhost:5173',
-  credentials: true
-}));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://byte-gpt-eight.vercel.app"
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 app.use(cookieParser());
 // API routes
