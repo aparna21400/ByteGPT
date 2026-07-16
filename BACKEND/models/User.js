@@ -6,20 +6,17 @@ import bcrypt from "bcrypt";
 const UserSchema = new mongoose.Schema({
     // Add fields: name, email, password, role (optional)
 
-    username: {
+    name: {
         type: String,
-        required: true,
-        unique: true,
+        required: true
     },
     email: {
         type: String,
-        unique: true,
         required: true
     },
     password: {
         type: String,
-        required: true,
-        select: false
+        required: true
     },
     isVerified: {
         type: Boolean,
@@ -29,13 +26,13 @@ const UserSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // bcrypt pre-save
-UserSchema.pre("save", async function (next) {
+UserSchema.pre("save", async (next) => {
     if (!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10);
     next();
 });
 // compare password
-UserSchema.methods.comparePassword = async function (candidatePassword) {
+UserSchema.methods.comparePassword = async (candidatePassword) => {
     return await bcrypt.compare(candidatePassword, this.password);
 };
 
