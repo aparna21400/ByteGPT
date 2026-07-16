@@ -13,7 +13,7 @@ const ChatWindow = () => {
 
   const [loading, setLoading] = useState(false);   // Controls loading spinner while waiting for API response
 
-  const[dropDown, setDropDown]= useState(false);
+  const [dropDown, setDropDown] = useState(false);
 
 
   const getReply = async () => {
@@ -31,8 +31,10 @@ const ChatWindow = () => {
       })
     };
     try {
-      const Response = await fetch("https://bytegpt-production-5383.up.railway.app/api/chat", options);       // Send message to backend chat API
-
+      const Response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/chat`,
+        options
+      );
       const res = await Response.json();
       console.log(res);
 
@@ -72,7 +74,7 @@ const ChatWindow = () => {
         <div className="UserIconDiv">
           <span className='user-icon'> <i className="fa-solid fa-user"></i></span>
         </div>
-        
+
       </div>
 
       {/* Component displaying chat messages */}

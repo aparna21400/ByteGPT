@@ -3,8 +3,8 @@ import "./Sidebar.css"
 import { useContext, useEffect } from 'react'
 import { MyContext } from './MyContext'
 import { v1 as uuidv1 } from "uuid";
-
-
+const API_URL = import.meta.env.VITE_API_URL;
+import logo from "../assets/ailogo.png";
 const Sidebar = () => {
 
   // global state and setters from context
@@ -13,7 +13,7 @@ const Sidebar = () => {
   // Fetch all chat threads 
   const getAlltThreads = async () => {
     try {
-      const response = await fetch("https://bytegpt-production-5383.up.railway.app/api/thread");
+      const response = await fetch(`${API_URL}/api/thread`);
       const res = await response.json();
 
       // Extract only required fields for sidebar display
@@ -46,7 +46,7 @@ const Sidebar = () => {
   const changeId = async (newThreadId) => {
     setCurrId(newThreadId);
     try {
-      const response = await fetch(`https://bytegpt-production-5383.up.railway.app/api/thread/${newThreadId}`);
+      const response = await fetch(`${API_URL}/api/thread/${newThreadId}`);
       const res = await response.json();
       console.log(res);
       setPrevChat(res);
@@ -63,7 +63,7 @@ const Sidebar = () => {
 
     try {
       const response = await fetch(
-        `https://bytegpt-production-5383.up.railway.app/api/thread/${threadId}`,
+        `${API_URL}/api/thread/${threadId}`,
         { method: "DELETE" }
       );
 
@@ -91,8 +91,7 @@ const Sidebar = () => {
   return (
     <section className='sidebar'>
       <button className='new-chat-button' onClick={createNewChat}>
-        <img src="src/assets/ailogo.png" alt="gpt logo" className='logo' />
-        {/*new chat button */}
+        <img src={logo} alt="gpt logo" className="logo" />
         <br />
         <span> <i className="fa-solid fa-pen-to-square"></i></span>
       </button>
