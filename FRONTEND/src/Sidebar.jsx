@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react'
 import { MyContext } from './MyContext'
 import { v1 as uuidv1 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
-import logo from "../assets/ailogo.png";
+// import logo from "../assets/ailogo.png";
 const Sidebar = () => {
 
   // global state and setters from context
@@ -91,7 +91,7 @@ const Sidebar = () => {
   return (
     <section className='sidebar'>
       <button className='new-chat-button' onClick={createNewChat}>
-        <img src={logo} alt="gpt logo" className="logo" />
+        {/* <img src={logo} alt="gpt logo" className="logo" /> */}
         <br />
         <span> <i className="fa-solid fa-pen-to-square"></i></span>
       </button>
