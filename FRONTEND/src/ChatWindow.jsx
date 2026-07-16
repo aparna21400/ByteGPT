@@ -31,7 +31,7 @@ const ChatWindow = () => {
       })
     };
     try {
-      const Response = await fetch("http://localhost:8080/api/chat", options);       // Send message to backend chat API
+      const Response = await fetch("https://bytegpt-production-5383.up.railway.app/api/chat", options);       // Send message to backend chat API
 
       const res = await Response.json();
       console.log(res);
