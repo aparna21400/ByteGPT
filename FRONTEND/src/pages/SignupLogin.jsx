@@ -6,7 +6,7 @@ import "./SignupLogin.css";
 
 function SignupLogin() {
   const [isLogin, setIsLogin] = useState(true);
-  const [name, setName] = useState("");
+  const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -27,8 +27,9 @@ function SignupLogin() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await signup(name, email, password);
+      await signup(username, email, password);
       setIsLogin(true);
+      console.log("click huaaaaaa")
       navigate("/"); // dashboard
     } catch (err) {
       console.log(err);
@@ -56,7 +57,7 @@ function SignupLogin() {
               <input
                 type="text"
                 placeholder="John Doe"
-                value={name}
+                value={username}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
