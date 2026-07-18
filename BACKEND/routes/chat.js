@@ -1,6 +1,7 @@
 import express from "express";
 import Thread from "../models/Threads.js"
 import getOpenAPIResponse from "../utils/openai.js";
+import mongoose from "mongoose";
 
 const router = express.Router();
 
@@ -70,9 +71,11 @@ router.delete("/thread/:threadId", async (req, res) => {
 // CHAT THREAD
 router.post("/chat", async (req, res) => {
     console.log("✅ Chat route hit");
+
     const { threadId, message } = req.body;
     console.log(req.body);
 
+    console.log("Mongo Ready State:", mongoose.connection.readyState);
     if (!threadId || !message) {
         res.status(400).json({ error: "Missing information" });
     }
