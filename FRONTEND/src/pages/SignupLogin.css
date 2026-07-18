@@ -1,0 +1,161 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Full screen login page */
+.login-page {
+ position: fixed;
+  inset: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Login container/card */
+.login-container {
+ width: 400px;
+  padding: 28px;
+  background: #0e0e0e;
+  color: white;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo / heading */
+.logo {
+   text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Subtitle below logo */
+.subtitle {
+   text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+/* Form fields container */
+.login-form .field {
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.login-form label {
+   font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #34312D;
+  background: #34312D;
+  /* mid-tone */
+  color: #fff;
+  outline: none;
+}
+
+.login-form input:hover {
+  border-color: #7E7F83;
+
+}
+
+/* Input focus */
+.login-form input:focus {
+  border-color: #7E7F83;
+  /* accent focus */
+  background: #34312D;
+  color: #fff;
+}
+
+/* Submit button */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #7E7F83;
+  /* accent button */
+  color: #14110F;
+  /* dark text */
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Button hover */
+.login-form button:hover:enabled {
+  background: #34312D;
+  /* mid-tone hover */
+  box-shadow: 0 4px 12px rgba(126, 127, 131, 0.5);
+  /* accent shadow */
+  color: #fff;
+}
+
+/* Disabled button */
+.login-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* Divider text */
+.divider {
+  text-align: center;
+  margin: 22px 0;
+  color: #7E7F83;
+  font-size: 12px;
+}
+
+/* Google button */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: white;
+  cursor: pointer;
+}
+
+/* Google hover */
+.google-btn:hover {
+  background: #34312D;
+  color: #fff;
+  border-color: #7E7F83;
+}
+
+/* Footer text */
+.footer-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 18px;
+  color: #7E7F83;
+}
+
+.footer-text span {
+  color: #7E7F83;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-text span:hover {
+  color: #fff;
+}
