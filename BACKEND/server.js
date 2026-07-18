@@ -12,7 +12,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://byte-gpt-eight.vercel.app",
-  "byte-gpt-aparnamishra2003-6398s-projects.vercel.app"
+  "https://byte-gpt-gw7p.vercel.app"
 ];
 
 app.use(
