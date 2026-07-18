@@ -18,7 +18,7 @@
     "react-router-dom": "^7.13.0",
     "react-spinners": "^0.17.0",
     "rehype-highlight": "^7.0.2",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.3.3",
     "uuid": "^13.0.0"
   },
   "devDependencies": {

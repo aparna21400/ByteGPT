@@ -29,6 +29,9 @@ app.use(
 
 app.use(cookieParser());
 // API routes
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 app.use("/api", chatRoutes);
 app.use("/api", userRoute);
 
