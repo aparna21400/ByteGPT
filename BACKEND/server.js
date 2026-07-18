@@ -11,7 +11,8 @@ const PORT = 8080;
 app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://byte-gpt-eight.vercel.app"
+  "https://byte-gpt-eight.vercel.app",
+  "byte-gpt-aparnamishra2003-6398s-projects.vercel.app"
 ];
 
 app.use(
